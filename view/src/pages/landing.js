@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import Header from '../components/header';
+import Header from '../components/Header';
 import Footer from '../components/footer';
+import Content from '../components/content';
+import '../components/content.css';
+
 import Link from '@material-ui/core/Link';
 
 import Avatar from '@material-ui/core/Avatar';
@@ -22,14 +25,8 @@ function landing() {
   return (
     <div>
         <Header></Header>
-        <h1>Landing Page!</h1>
-        <Link href="questionnaire" variant="body2">
-									{"I need help!"}
-								</Link>
-        <Link href="login" variant="body2">
-									{"I want to help!"}
-								</Link>
-                <Footer></Footer>
+        <Content></Content>
+        <Footer></Footer>
     </div>
     
   );

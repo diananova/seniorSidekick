@@ -42,6 +42,7 @@ exports.signUpUser = (request, response) => {
         phoneNumber: request.body.phoneNumber,
         country: request.body.country,
         city: request.body.city,
+        bio: request.body.bio,
 		password: request.body.password,
 		confirmPassword: request.body.confirmPassword,
         username: request.body.username,
@@ -84,6 +85,7 @@ exports.signUpUser = (request, response) => {
                 username: newUser.username,
                 phoneNumber: newUser.phoneNumber,
                 country: newUser.country,
+                bio: newUser.bio,
                 city: newUser.city,
                 email: newUser.email,
                 urgent: newUser.urgent,
@@ -124,30 +126,14 @@ exports.getAllUsers = (request, response) => {
                     email: doc.data().email,
                     phoneNumber: doc.data().phoneNumber,
                     country: doc.data().country,
+                    bio: doc.data().bio,
                     city: doc.data().city,
                     urgent: doc.data().urgent,
                     shopping: doc.data().shopping,
                     entertaining: doc.data().entertaining,
                     pets: doc.data().pets,
                     rides: doc.data().rides,
-                    /*
-                    firstName: request.body.firstName,
-        lastName: request.body.lastName,
-        email: request.body.email,
-        phoneNumber: request.body.phoneNumber,
-        country: request.body.country,
-		password: request.body.password,
-		confirmPassword: request.body.confirmPassword,
-		username: request.body.username
-
-                    country: doc.data().country,
-                    city: doc.data().city,
-                    phone: doc.data().phone,
-                    bio: doc.data().bio,
-                    urgent: doc.data().urgent,
-                    groceries: doc.data().groceries,
-                    pet: doc.data().pet,
-                    ride: doc.data().ride, */
+                    
 				});
 			});
 			return response.json(volunteers);

@@ -46,6 +46,7 @@ class signup extends Component {
 			phoneNumber: '',
 			country: '',
 			city: '',
+			bio: '',
 			username: '',
 			email: '',
 			password: '',
@@ -92,6 +93,7 @@ class signup extends Component {
 			phoneNumber: this.state.phoneNumber,
 			country: this.state.country,
 			city: this.state.city,
+			bio: this.state.bio,
 			username: this.state.username,
 			email: this.state.email,
 			password: this.state.password,
@@ -240,6 +242,22 @@ class signup extends Component {
 									onChange={this.handleChange}
 								/>
 							</Grid>
+
+							<Grid item xs={12}>
+								<TextField
+									variant="outlined"
+									required
+									fullWidth
+									id="bio"
+									label="Tell us a little bit about yourself..."
+									name="bio"
+									autoComplete="bio"
+									helperText={errors.bio}
+									error={errors.bio ? true : false}
+									onChange={this.handleChange}
+								/>
+							</Grid>
+
 							<Grid item xs={12}>
 								<TextField
 									variant="outlined"

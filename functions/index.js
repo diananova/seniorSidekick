@@ -4,17 +4,6 @@ const functions = require('firebase-functions');
 const app = require('express')();
 const auth = require('./util/auth');
 
-const {
-    getAllVolunteers,
-    postOneVolunteer
-} = require('./APIs/volunteers')
-app.get('/volunteers', getAllVolunteers); //select all
-app.post('/vol', postOneVolunteer); //creating a new to do
-
-//app.delete('/todo/:todoId', deleteTodo);
-//app.put('/todo/:todoId', editTodo);
-
-//sign in
 
 const {
     loginUser,

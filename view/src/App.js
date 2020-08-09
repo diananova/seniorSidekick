@@ -4,10 +4,8 @@ import login from './pages/login';
 import signup from './pages/signup';
 import questionnaire from './pages/questionnaire';
 import results from './pages/results';
-
-
-
-//import home from './pages/home'; <Route exact path="/" component={home}/>
+import userdetails from './pages/userDetails';
+import home from './pages/home'; 
 
 import React from 'react';
 function App() {
@@ -16,10 +14,13 @@ function App() {
     <div>
        <Switch>
           <Route exact path="/" component={landing}/>
+          <Route exact path="/home" component={home}/> 
           <Route exact path="/login" component={login}/>
           <Route exact path="/signup" component={signup}/>     
           <Route exact path="/questionnaire" component={questionnaire}/>  
           <Route exact path="/results" component={results}/>  
+          <Route exact path="/userdetails" component={userdetails}/> 
+           
           </Switch>
     </div>
 </Router>

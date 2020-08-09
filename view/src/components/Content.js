@@ -1,12 +1,13 @@
 import React from 'react';
-import './Content.css';
+import './content.css';
 import logo from './content-image.jpg';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { blue, lightBlue } from '@material-ui/core/colors';
 import Button from '@material-ui/core/Button';
-
-const theme = createMuiTheme({ typography: { fontFamily: [ 'Permanent Marker' ]}});
-
+import Person1 from '../images/girl1.jpg';
+import Person2 from '../images/girl2.jpg';
+import Person3 from '../images/girl3.jpg';
+import Person4 from '../images/girl4.jpg';
 function Content() {
     return(
         <div class="content">
@@ -15,7 +16,7 @@ function Content() {
             </div>
             <div class="buttons">
             <div class="individual-button">
-            <Button variant="contained" onClick={() => { alert('clicked') }} style={{ backgroundColor: blue[200], borderRadius: '15px', padding: '20px 20px', fontSize: '36px', fontFamily: 'Permanent Marker' }}>
+            <Button variant="contained" Link href="questionnaire"  style={{ backgroundColor: blue[200], borderRadius: '15px', padding: '20px 20px', fontSize: '36px', fontFamily: 'Permanent Marker' }}>
                 I'm a Senior!
             </Button>
             <div class="button-content">
@@ -25,7 +26,7 @@ function Content() {
             </div>
             </div>
             <div class="individual-button">
-            <Button variant="contained" onClick={() => { alert('clicked') }} style={{ backgroundColor: blue[200], borderRadius: '15px', padding: '20px 20px', fontSize: '36px', fontFamily: 'Permanent Marker' }}>
+            <Button variant="contained" Link href="login" style={{ backgroundColor: blue[200], borderRadius: '15px', padding: '20px 20px', fontSize: '36px', fontFamily: 'Permanent Marker' }}>
                 I'm a Sidekick!
             </Button>
             <div class="button-content">
@@ -75,23 +76,23 @@ function Content() {
                 <p class="how-it-works">About Us</p>
                 <div class="about-us">
                     <p>
-                    - in light of the pandemic, we see a problem - the elderly being isolated, and having difficulties to perform daily tasks and activities.
+                    The COVID 19 pandemic has affected different demographics disproportionately. The elderly who are already immuno comporomised are significantly more vulnerable to the virus.
                     </p>
                     <p>
-                    - this is actually an ongoing problem before the pandemic but was highlighted when covid 19 hit
+                    This impacts them a lot more than the youth. SeniorSideKick solves this by connecting the youth to the elders, by helping them get groceries, walking their dogs, or giving them a ride!
                     </p>
                     <p>
-                    we hope that by connecting available proactive young adults to help out with the seniors in their community can foster an environment where the elerly won’t be isolated from the community and can form and maintain relationships with the younger generations.
+                    We hope that by connecting available proactive young adults to help out with the seniors in their community can foster an environment where the elerly won’t be isolated from the community and can form and maintain relationships with the younger generations.
                     </p>
                     <p>
-                    “ “ -  something about passing experinece and wisdom/knowlege to the future generation.
+                    It will be a way to ensure our generations are connected and supported.
                     </p>
                 </div>
                 <div class="our-images">
-                        <img src="https://i.pinimg.com/originals/3a/74/5d/3a745d3dcba72feb73e44e399ec97bea.jpg" />
-                        <img src="https://i.pinimg.com/originals/3a/74/5d/3a745d3dcba72feb73e44e399ec97bea.jpg" />
-                        <img src="https://i.pinimg.com/originals/3a/74/5d/3a745d3dcba72feb73e44e399ec97bea.jpg" />
-                        <img src="https://i.pinimg.com/originals/3a/74/5d/3a745d3dcba72feb73e44e399ec97bea.jpg" />
+                        <img src={Person1} />
+                        <img src={Person2} />
+                        <img src={Person3} />
+                        <img src={Person4} />
                     </div>
             </div>
         </div>
