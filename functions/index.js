@@ -19,9 +19,9 @@ app.post('/vol', postOneVolunteer); //creating a new to do
 const {
     loginUser,
     signUpUser,
+    getUserDetail,
     getAllUsers,
     uploadProfilePhoto,
-    getUserDetail,
     updateUserDetails
 } = require('./APIs/users')
 

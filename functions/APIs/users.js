@@ -43,7 +43,12 @@ exports.signUpUser = (request, response) => {
         country: request.body.country,
 		password: request.body.password,
 		confirmPassword: request.body.confirmPassword,
-		username: request.body.username
+        username: request.body.username,
+        urgent: request.body.urgent,
+        entertaining: request.body.entertaining,
+        shopping: request.body.shopping,
+        pets: request.body.pets,
+        rides: request.body.rides
     };
 
     const { valid, errors } = validateSignUpData(newUser);
@@ -79,6 +84,11 @@ exports.signUpUser = (request, response) => {
                 phoneNumber: newUser.phoneNumber,
                 country: newUser.country,
                 email: newUser.email,
+                urgent: newUser.urgent,
+                shopping: newUser.shopping,
+                entertaining: newUser.entertaining,
+                rides: newUser.rides,
+                pets: newUser.pets,
                 createdAt: new Date().toISOString(),
                 userId
             };
@@ -112,6 +122,11 @@ exports.getAllUsers = (request, response) => {
                     email: doc.data().email,
                     phoneNumber: doc.data().phoneNumber,
                     country: doc.data().country,
+                    urgent: doc.data().urgent,
+                    shopping: doc.data().shopping,
+                    entertaining: doc.data().entertaining,
+                    pets: doc.data().pets,
+                    rides: doc.data().rides,
                     /*
                     firstName: request.body.firstName,
         lastName: request.body.lastName,
