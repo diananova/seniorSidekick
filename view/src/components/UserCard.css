@@ -1,0 +1,12 @@
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.availability {
+    display: flex;
+}
+
+.align {
+    padding-top: 10px;
+}

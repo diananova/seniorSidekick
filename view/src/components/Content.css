@@ -1,0 +1,76 @@
+.content__logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 400px;
+    object-fit: contain;
+    padding-top: 30px;
+    overflow: hidden;
+}
+
+img {
+    padding-left: 15%;
+}
+
+.individual-button {
+    display: grid;
+    grid-template-rows: auto auto;
+    width: 450px;
+}
+
+.buttons {
+    padding-top: 30px;
+    padding-bottom: 70px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.button-content {
+    padding-top: 15px;
+}
+
+.how-it-works {
+    text-decoration: underline;
+    text-align: center;
+    font-size: 48px;
+}
+
+.about-how {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+}
+
+.how {
+    padding: 40px;
+}
+
+.about-how > div {
+    text-align: center;
+}
+
+.about-us {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.our-images {
+    margin-top: 30px;
+    margin-left: 15%;
+    width: 70%;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+    grid-column-gap: 50px;
+    grid-row-gap: 20px;
+}
+
+.our-images > img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}

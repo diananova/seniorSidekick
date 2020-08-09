@@ -45,6 +45,7 @@ class signup extends Component {
 			lastName: '',
 			phoneNumber: '',
 			country: '',
+			city: '',
 			username: '',
 			email: '',
 			password: '',
@@ -90,6 +91,7 @@ class signup extends Component {
 			lastName: this.state.lastName,
 			phoneNumber: this.state.phoneNumber,
 			country: this.state.country,
+			city: this.state.city,
 			username: this.state.username,
 			email: this.state.email,
 			password: this.state.password,
@@ -220,6 +222,21 @@ class signup extends Component {
 									autoComplete="country"
 									helperText={errors.country}
 									error={errors.country ? true : false}
+									onChange={this.handleChange}
+								/>
+							</Grid>
+
+							<Grid item xs={12}>
+								<TextField
+									variant="outlined"
+									required
+									fullWidth
+									id="city"
+									label="City"
+									name="city"
+									autoComplete="city"
+									helperText={errors.city}
+									error={errors.city ? true : false}
 									onChange={this.handleChange}
 								/>
 							</Grid>

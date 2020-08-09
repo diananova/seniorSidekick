@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../components/header';
-
+import Footer from '../components/footer';
 import Link from '@material-ui/core/Link';
 
 import Avatar from '@material-ui/core/Avatar';
@@ -29,6 +29,7 @@ function landing() {
         <Link href="login" variant="body2">
 									{"I want to help!"}
 								</Link>
+                <Footer></Footer>
     </div>
     
   );
