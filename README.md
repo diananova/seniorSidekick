@@ -19,6 +19,6 @@ For the backend we used Firebase for the database and user authentication. For t
 ### Challenges we ran into
 For two of our team members, this is their very first hackathon . Also, it is our first time with React and Firebase so we had trouble integrating the frontend and the backend (post/get requests). After spending many hours going through the various documentations, we managed to finish it on time. Building this app took a lot of patience and support from one another. Through the power of teamwork, we assembled and created our first app this weekend!
 
-Learn more: https://devpost.com/software/seniorsidekick
+Learn more: https://devpost.com/software/seniorsidekick \
 Slides: https://drive.google.com/file/d/1iyqz4t9n6pEKZdrt49fl2T1PucWLX2og/view
 
