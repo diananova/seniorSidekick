@@ -73,6 +73,10 @@ class results extends Component {
  
   renderVolunteers() {
     console.log(this.state.array);
+    if (this.state.array==null)
+      return (
+        <div>Sorry! No one offers that service in your area :(</div>
+      )
     return _.map(this.state.array, user => {
       return (
         <div>
@@ -82,6 +86,7 @@ class results extends Component {
                     title="Image title"
                   />
           <Typography style={{fontFamily:'Arial'}}>{user.firstName} {user.lastName} </Typography>
+          <Typography style={{fontFamily:'Arial', paddingTop: '5px'}}>Country: {user.country}</Typography>
           <Typography style={{fontFamily:'Arial', paddingTop: '5px'}}>{user.bio}</Typography>
           <Typography style={{fontFamily:'Arial', paddingTop: '5px'}}>Phone number: {user.phoneNumber}</Typography>
           </Card>
