@@ -209,18 +209,15 @@ exports.uploadProfilePhoto = (request, response) => {
 };
 
 exports.getUserDetail = (request, response) => {
-    let userData = {};
-	db
-		.doc(`/users/${request.user.username}`)
-		.get()
-		.then((doc) => {
-			if (doc.exists) {
-                userData.userCredentials = doc.data();
-                return response.json(userData);
-			}	
-		})
-		.catch((error) => {
-			console.error(error);
-			return response.status(500).json({ error: error.code });
-		});
+    db.collection('users').doc(request.params.id).get()
+    .then((doc) => {
+        if (doc.exists) {
+            return response.json(doc.data());
+        }	
+    })
+    .catch((error) => {
+        console.error(error);
+        return response.status(500).json({ error: error.code });
+    });
+   
 }
