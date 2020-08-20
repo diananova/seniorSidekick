@@ -40,11 +40,12 @@ const useStyles = makeStyles((theme) => ({
 class results extends Component {
 	constructor(props) {
     super(props);
-
     this.state = {
       array: []
     };
-  }componentDidMount(){
+  }
+  
+  componentDidMount(){
     axios
       .get('/users')
       .then((response)=> {
@@ -82,6 +83,7 @@ class results extends Component {
                   />
           <Typography style={{fontFamily:'Arial'}}>{user.firstName} {user.lastName} </Typography>
           <Typography style={{fontFamily:'Arial', paddingTop: '5px'}}>{user.bio}</Typography>
+          <Typography style={{fontFamily:'Arial', paddingTop: '5px'}}>Phone number: {user.phoneNumber}</Typography>
           </Card>
         </div>
       );
