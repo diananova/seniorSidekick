@@ -2,10 +2,9 @@
 
 ## SETUP
 1. download the repo as a zip
-2. npm install (gets the dependencies)
-3. npm audit fix (if there are vulnerabilities)
-4. npm run build
-
+2. npm install (gets the dependencies) -> npm audit fix (if there are vulnerabilities)
+3. cd view -> npm install
+4. npm start
 ## INTRODUCTION
 
 ### Inspiration
