@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import 'survey-react/survey.css';
 import * as Survey from 'survey-react';
-import Header from '../components/Header';
+import Header from '../components/header';
 import Footer from '../components/footer';
 
 

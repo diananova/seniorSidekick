@@ -1,10 +1,18 @@
 
 import React, { Component } from 'react';
-import Header from '../components/Header';
+import Header from '../components/header';
 import Footer from '../components/footer';
 import axios from 'axios';
 import _ from 'lodash';
 
+
+import Avatar from '@material-ui/core/Avatar';
+
+
+
+
+import withStyles from '@material-ui/core/styles/withStyles';
+import Typography from '@material-ui/core/Typography';
 
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
@@ -20,10 +28,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 
-
-import withStyles from '@material-ui/core/styles/withStyles';
-import Typography from '@material-ui/core/Typography';
-
+import Person1 from '../images/girl1.jpg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,6 +38,14 @@ const useStyles = makeStyles((theme) => ({
   },
   inline: {
     display: 'inline',
+  },
+  small: {
+    width: theme.spacing(3),
+    height: theme.spacing(3),
+  },
+  large: {
+    width: theme.spacing(7),
+    height: theme.spacing(7),
   },
 }));
 
@@ -72,23 +85,43 @@ class results extends Component {
  
   renderVolunteers() {
     console.log(this.state.array);
+    const classes = useStyles();
     return _.map(this.state.array, user => {
       return (
         <div>
-          <Card style={{ marginLeft:'15%', width: '70%', marginBottom: '20px', marginTop: '10px'}}>
-          <CardMedia
-                    image="../images/girl1.jpg"
-                    title="Image title"
-                  />
-          <Typography style={{fontFamily:'Arial'}}>{user.firstName} {user.lastName} </Typography>
-          <Typography style={{fontFamily:'Arial', paddingTop: '5px'}}>{user.bio}</Typography>
-          </Card>
-        </div>
-      );
+           <Grid xs={12} sm={6} md={4}>
+                <Card>
+                <Avatar alt="Remy Sharp" src={Person1} className={classes.large} />
+
+                  <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                  {user.firstName} {user.lastName}
+                    </Typography>
+                    <Typography>
+                    {user.bio}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                     Learn More
+                    </Button>
+                    </CardActions>
+                </Card>
+                </Grid>
+                </div>
+     );
+
     });
   }
  
 }
+/*
+          <Card style={{ marginLeft:'15%', width: '70%', marginBottom: '20px', marginTop: '10px'}}>
+          <Typography style={{fontFamily:'Arial'}}>{user.firstName} {user.lastName} </Typography>
+          <Typography style={{fontFamily:'Arial', paddingTop: '5px'}}>{user.bio}</Typography>
+          </Card>
+      */
+ 
 
 export default results;
 
