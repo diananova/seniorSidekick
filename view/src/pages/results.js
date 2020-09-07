@@ -85,13 +85,13 @@ class results extends Component {
  
   renderVolunteers() {
     console.log(this.state.array);
-    const classes = useStyles();
+    //const classes = useStyles();
     return _.map(this.state.array, user => {
       return (
         <div>
            <Grid xs={12} sm={6} md={4}>
                 <Card>
-                <Avatar alt="Remy Sharp" src={Person1} className={classes.large} />
+                <Avatar alt="Remy Sharp" src={Person1}  />
 
                   <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">

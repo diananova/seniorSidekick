@@ -1,7 +1,7 @@
 //index.js
-
+// Express Routing
 const functions = require('firebase-functions');
-const app = require('express')();
+const app = require('express')(); 
 const auth = require('./util/auth');
 
 
