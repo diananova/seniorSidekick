@@ -1,13 +1,9 @@
 import React from 'react';
 import './Content.css';
-import logo from './content-image.jpg';
+import logo from './../images/content-image.jpg';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { blue, lightBlue } from '@material-ui/core/colors';
 import Button from '@material-ui/core/Button';
-import Person1 from '../images/girl1.jpg';
-import Person2 from '../images/girl2.jpg';
-import Person3 from '../images/girl3.jpg';
-import Person4 from '../images/girl4.jpg';
 function Content() {
     return(
         <div class="content">
@@ -70,30 +66,6 @@ function Content() {
                     </p>
                     </div>
                 </div>
-            </div>
-
-            <div class="how">
-                <p class="how-it-works">About Us</p>
-                <div class="about-us">
-                    <p>
-                    The COVID 19 pandemic has affected different demographics disproportionately. The elderly who are already immuno comporomised are significantly more vulnerable to the virus.
-                    </p>
-                    <p>
-                    This impacts them a lot more than the youth. SeniorSideKick solves this by connecting the youth to the elders, by helping them get groceries, walking their dogs, or giving them a ride!
-                    </p>
-                    <p>
-                    We hope that by connecting available proactive young adults to help out with the seniors in their community can foster an environment where the elerly won’t be isolated from the community and can form and maintain relationships with the younger generations.
-                    </p>
-                    <p>
-                    It will be a way to ensure our generations are connected and supported.
-                    </p>
-                </div>
-                <div class="our-images">
-                        <img src={Person1} />
-                        <img src={Person2} />
-                        <img src={Person3} />
-                        <img src={Person4} />
-                    </div>
             </div>
         </div>
     )

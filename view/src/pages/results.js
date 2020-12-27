@@ -6,9 +6,6 @@ import axios from 'axios';
 import _ from 'lodash';
 
 
-import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
-import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -54,9 +51,9 @@ class results extends Component {
           });
     })
   }
+
+  
   render() {
-    //const { classes } = this.props;
-    console.log(this.state.array);
     return(
       <div>
         <Header></Header>
@@ -72,12 +69,21 @@ class results extends Component {
   }
  
   renderVolunteers() {
-    console.log(this.state.array);
-    if (this.state.array==null)
+    let arr = this.state.array;
+    var search = this.props.location.state.searchFilters
+    let filteredOptions = arr.filter(
+      o => ((search.country==null ||  o.country === search.country) && 
+      (search.city==null ||  o.city === search.city) &&
+      (search.category==null ||  o.category === search.category))
+    );
+    
+    
+    
+    if (filteredOptions==null || filteredOptions.length<=0)
       return (
-        <div>Sorry! No one offers that service in your area :(</div>
+        <div>Sorry! No one offers that service in your area</div>
       )
-    return _.map(this.state.array, user => {
+    return _.map(filteredOptions, user => {
       return (
         <div>
           <Card style={{ marginLeft:'15%', width: '70%', marginBottom: '20px', marginTop: '10px'}}>
@@ -88,6 +94,7 @@ class results extends Component {
           <Typography style={{fontFamily:'Arial'}}>{user.firstName} {user.lastName} </Typography>
           <Typography style={{fontFamily:'Arial', paddingTop: '5px'}}>Country: {user.country}</Typography>
           <Typography style={{fontFamily:'Arial', paddingTop: '5px'}}>{user.bio}</Typography>
+          <Typography style={{fontFamily:'Arial', paddingTop: '5px'}}>{user.category}</Typography>
           <Typography style={{fontFamily:'Arial', paddingTop: '5px'}}>Phone number: {user.phoneNumber}</Typography>
           </Card>
         </div>

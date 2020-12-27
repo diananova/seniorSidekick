@@ -15,19 +15,25 @@ class Questionnaire extends Component {
         this.onCompleteComponent = this.onCompleteComponent.bind(this)
     }
 
-    onCompleteComponent = () => {
+    onCompleteComponent = (sender) => {
         this.setState({
             isCompleted: true
         })
+        this.props.history.push({
+            pathname: '/results',
+            state: { searchFilters:sender.data }
+        
+        })
+        console.log(sender.data);
 }
 
 
     render(){
         var surveyJSON = {"pages":[
             {"name":"page1","elements":[
-                {"type":"dropdown","name":"country","title":"Select the country...","isRequired":true,"choicesByUrl":{"url":"https://restcountries.eu/rest/v2/all","valueName":"name"}},
-                {"type":"text","name":"city","title":"Insert the city...","isRequired":true,},
-                {"type":"dropdown","name":"question1","title":"What do you need help with?","isRequired":true,"choices":["Groceries","Ride","Doctor's Appointment","Emergency","Walk my dog"]}]}]};
+                {"type":"dropdown","name":"country","title":"Select the country...","choicesByUrl":{"url":"https://restcountries.eu/rest/v2/all","valueName":"name"}},
+                {"type":"text","name":"city","title":"Insert the city..."},
+                {"type":"dropdown","name":"category","title":"What do you need help with?","choices":["groceries","Ride","Doctor's Appointment","Emergency","Walk my dog"]}]}]};
          
         var surveyRender = !this.state.isCompleted ? (
             <Survey.Survey 
@@ -37,14 +43,13 @@ class Questionnaire extends Component {
             />
         ) : null;
 
-        var onSurveyCompletion = this.state.isCompleted ? (
-          this.props.history.push('/results')
-        ) : null;
+
+
+      
         return (
             <div>
                <Header></Header>
                 {surveyRender}
-                {onSurveyCompletion}
             </div>
         )
     }
